@@ -1,0 +1,21 @@
+# a DICTIONARY is muttable
+# in this section i will create a DICTIONARY and show you how dictionaries are muttable = making changes
+# a DICTIONARY has a {'key': 'value'} pair and are created using curly brackets {}
+
+my_dict = {'key': 'value'}
+print(my_dict)
+
+# RESULT
+{'key': 'value'}
+
+# you can return only the KEY or the VALUE 
+# you can also return the KEY and VALUE another way
+
+my_dict.values()
+my_dict.keys()
+my_dict.items()
+
+# RESULT
+['value']
+['key']
+['key','value']
