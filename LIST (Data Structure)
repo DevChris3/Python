@@ -1,4 +1,4 @@
-# LIST 
+# LIST are muttable
 # creating lists and making changes
 
 # store a list of numbers in a variable called {my_list}
@@ -18,7 +18,8 @@ my_list[1:4]
 3
 [2,3,4]
 
-# slicing has a {START:STOP:INCREMENT}
+# SLICING means to take elements from one given index to another given index
+# slicing has a {START:STOP:STEP}
 # by default python starts at 0 incrementing by 1
 # in this example python starts at 0, stops at 4 and increment by 1 
 # in the other example python starts at 0, stops at 4 and increment by 2
