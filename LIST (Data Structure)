@@ -1,5 +1,7 @@
+# LIST 
 # creating lists and making changes
 
+# store a list of numbers in a variable called {my_list}
 my_list = [1,2,3,4,5,6,7,8,9]
 print(my_list)
 
@@ -16,7 +18,7 @@ my_list[1:4]
 3
 [2,3,4]
 
-# slicing has a {start:stop:increment}
+# slicing has a {START:STOP:INCREMENT}
 # by default python starts at 0 incrementing by 1
 # in this example python starts at 0, stops at 4 and increment by 1 
 # in the other example python starts at 0, stops at 4 and increment by 2
