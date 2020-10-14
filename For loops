@@ -1,0 +1,34 @@
+# we can use For loops to execute a block of code for every iteration
+# such as every element in a list or every char in a string, etc.,
+
+# syntax of a For loop:
+
+names = ['chris', 'george', 'jay']
+
+for item_name in names:
+    print(item_name)
+    
+# RESULT
+ chris
+ george
+ jay
+ 
+ # for every item in the LIST called names, the For loop allows you to return each char
+ 
+ # in this example Below...we iterate over a sequence of numbers:
+ 
+ for num in range(1,10):
+    print(num)
+    
+# RESULT
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+NOT INCLUDING THE LAST NUMBER *by default
