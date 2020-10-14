@@ -33,3 +33,52 @@ for item_name in names:
 8
 9
 NOT INCLUDING THE LAST NUMBER *by default
+
+
+# Example
+
+# create a list of int and iterate through that list using the FOR loop
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for number in my_list:
+   print(number)
+   
+# RESULT
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+# difference between iterating through a list and using the range function:
+      - the range function has a {start:stop:step}
+      - but HERE i actually created my own list 
+            - so python goes through the entire list and returns every char in the list
+            
+# Example 2:
+
+my_list = [1, 2, 3, 4, 5]
+
+# this time we will iterate through the list and print out a string instead of the numbers
+
+for num in my_list:
+   print("Hello")
+
+# RESULT
+
+Hello
+Hello
+Hello
+Hello
+Hello
+
+# python goes through the LIST and returns the string "Hello" 5 times....
+
+
+
