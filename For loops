@@ -3,7 +3,8 @@
 
 # syntax of a For loop:
 
-names = ['chris', 'george', 'jay']
+# this is an Assignment
+ names = ['chris', 'george', 'jay']
 
 for item_name in names:
     print(item_name)
