@@ -1,0 +1,46 @@
+# GLOBAL
+name = "THIS IS A GLOBAL STRING"
+
+def greet():
+
+    # ENCLOSING
+
+    name = "Sammy"
+
+    def hello():
+        # LOCAL
+        name = "I am LOCAL"
+        print("Hello " + name)
+
+    hello()
+
+
+print(greet())
+
+
+x = 50
+
+def func(x):
+    print(f"X is {x}")
+
+    # LOCAL REASSIGNMENT!
+    x = 200
+    print(f"I just LOCALLY changed X to {x}")
+
+
+print(func(x))
+print(x)
+
+
+# EXAMPLE:
+a = 25
+
+def my_func(a):
+    print(a)
+
+    a = "NEW VALUE"
+    print(a)
+
+my_func(a)
+
+
