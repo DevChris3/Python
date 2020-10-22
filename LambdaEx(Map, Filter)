@@ -1,0 +1,141 @@
+# Mapping function
+
+def vehicle(car):
+    if len(car) % 2 == 0:
+        return "EVEN"
+    else:
+        return car[0]
+
+
+cars = ['benz', 'honda', 'kia']
+print(list(map(vehicle, cars)))
+
+
+def square(num):
+    return num ** 2
+
+
+my_nums = [1, 2, 3, 4, 5]
+
+
+# using a for loop to map (iterate each item)
+for item in map(square, my_nums):
+    print(item)
+
+
+# DIFFERENCE BETWEEN FOR LOOP AND MAP FUNCTION
+number_1 = [1, 2, 3, 4, 5]
+
+# EXAMPLE
+
+for num in number_1:
+    at_the_end = num ** 2
+
+    print(at_the_end)
+
+
+# simplify
+
+print(list(map(square, my_nums)))
+
+
+def my_func(a, b):
+    return a + b
+
+
+x = map(my_func, ('apple', 'banana', 'pears'), ('grapes', 'oranges', 'cherry'))
+
+
+print(x)  # doesnt give an ERROR but this print the memory that x is stored
+print(list(x))  # coverts the map into a list, for better readability
+
+
+def diff_colors(color):
+    return color
+
+
+x = map(diff_colors, 'blue')  # requires the func and iterable...iterate through the parameter for each item
+
+print(list(x))
+
+
+def names(friends, age):
+    return friends,  age
+
+
+x = map(names, ('ben', 'larry', 'chris'), (12, 11, 13))
+
+
+print(list(x))
+
+
+# Filter function
+
+def check_even(num):
+    return num % 2 == 0
+
+
+my_nums = [1, 2, 3, 4, 5, 6, 10, 12]
+
+
+print(list(filter(check_even, my_nums)))
+
+# using for loop to FILTER:
+
+for number in filter(check_even, my_nums):
+    print(number)
+
+# using the FILTER Function
+ages = [5, 8, 11, 15, 17, 18, 21, 24, 28]
+
+
+def my_func(x):
+    if x < 18:
+        return False
+    else:
+        return True
+
+
+new_func = filter(my_func, ages)
+
+for x in new_func:
+    print(x)
+
+
+# Lambda function is a small anonymous function
+# Lambda function can take any number of args, but can only have one expression
+
+
+def square(num):
+    result = num ** 2
+    return result
+
+
+print(square(3))
+
+# LAMBDA example:
+# LAMBDA EXPRESSION
+# using the MAP function
+new_list = [3, 4, 5]
+
+print(list(map(lambda n: n ** 2, new_list)))  # return a list of the lambda function
+print(lambda n: n ** 2)  # won't give you a ERROR but just returns the storage of the Lambda Function
+# another example:
+# LAMBDA EXPRESSION
+# using the FILTER function
+
+my_nums = [1, 2, 3, 4, 5, 6, 10, 12]
+print(list(filter(lambda a: a % 2 == 0, my_nums)))
+
+# using the LAMBDA Function to get the first char of a list
+
+
+names = ["andy", 'jeff', 'chris']
+
+print(list(map(lambda name: name[0], names)))  # returns the char at index 0 in a string
+
+
+names_2 = ["bobby", "craig", "jimmy", "chris"]
+
+print(list(map(lambda name: name[-1], names_2)))  # returns the last char in a string
+
