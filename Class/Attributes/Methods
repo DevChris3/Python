@@ -1,0 +1,23 @@
+class Car():
+    
+    # CLASS OBJECT ATTRIBUTE
+    # SAME FOR ANY INSTANCE OF A CLASS
+    
+    def __init__(self, make, color):
+        
+        # Attributes
+        # We take in the argument
+        # Assign it using self.attribute_name
+        self.make = make
+        self.color = color
+        
+    # OPERATIONS/Actions ----> Methods
+    def drive(self):
+        print("Zoooom! My car is a {}".format(self.make))
+        
+  # RESULT
+  
+  my_car.make
+     -  'Honda'
+  my_car.drive()
+     - Zoooom! My car is a Honda
