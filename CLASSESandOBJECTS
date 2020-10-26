@@ -1,2 +1,98 @@
 # CREATE A PARENT CLASS
 # CREATE A CHILD CLASS
+
+
+class Dog:
+
+    # CONSTRUCTOR
+    def __init__(self, name, color, weight):
+        self.name = name
+        self.color = color
+        self.weight = weight
+
+    # METHOD
+    def introduce_self(self):
+        print("Hello my name is {}".format(self.name))
+        print("I am {}".format(self.color))
+        print("I weight {} pounds".format(self.weight))
+        print("WOOF! WOOF!")
+
+
+pet1 = Dog("Kenny", "gray", 30)
+pet2 = Dog("Missy", "white", 40)
+
+pet1.introduce_self()
+pet2.introduce_self()
+
+
+# MAGIC/DUNDER METHODS
+
+class Book:
+    
+    def __init__(self, title, author, pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
+
+    # YOU CAN USE THE (SPECIAL METHOD)
+
+    def __str__(self):  # RETURNS BACK THE STRING REPRENTATION
+        return f"{self.title} by {self.author}"
+
+    # MAGIC/DUNDER METHOD
+
+    def __len__(self):  # RETURNS THE LEN
+        return self.pages
+
+
+b = Book("Python Programming", "Jen", 160)
+
+print(b)
+print(len(b))
+
+
+class BankAccount:
+
+    def __init__(self, owner, balance):
+
+        self.owner = owner
+        self.balance = balance
+
+    def deposit(self, depos):
+
+        self.balance = self.balance + depos
+        print(f"Added {depos} to the balance")
+
+    def withdrawal(self, withdr):
+
+        if self.balance >= withdr:
+            self.balance = self.balance - withdr
+            print("Withdrawl Accepted")
+        else:
+            print("Sorry not enough funds!")
+
+    def __str__(self):
+        return f"owner: {self.owner} \nBalance: {self.balance}"
+
+
+acct1 = BankAccount("Ken", 500)
+
+print(acct1.owner)
+
+print(acct1.balance)
+
+print(acct1)
+
+acct1.deposit(100)
+
+print(acct1.balance)
+
+acct1.withdrawal(599)
+
+print(acct1.balance)
+
+acct1.deposit(599)
+
+print(acct1.balance)
+
+acct1.withdrawal(601)
