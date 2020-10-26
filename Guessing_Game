@@ -1,0 +1,30 @@
+# Guessing a number
+# create a variable that gives the user a number of guesses
+# increment each time a user guess a number
+# generate a random number between (0, 25)
+# check user guess and return if user is too low or too high or if user is correct
+# ask user to play again
+
+
+import random
+
+
+num_of_guess = 0  # gives guess a starting value
+guess_limit = 5  # calculating user guesses
+random_number = random.randrange(0, 25)  # generates a random number
+
+
+while True:  # basically {while True, iterate through the loop}
+    user = int(input("Guess a number: "))  # gets the user input
+    if num_of_guess == guess_limit:
+        print("BEST OF LUCK NEXT TIME!")
+        break
+    if user > random_number:
+        print("You are TOO HIGH!")
+    elif user < random_number:
+        print("You are TOO LOW!")
+    elif user == random_number:
+        print("CONGRATS...You Win!")
+        break  # if user guess the right answer, automatically break out the loop
+    else:
+        print("WRONG...Try Again")
