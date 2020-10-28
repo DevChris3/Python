@@ -1,0 +1,50 @@
+# TRY TO ITERATE THROUGH A LIST OF STRINGS
+# SQUARED
+
+for i in ['a', 'b', 'c']:
+    print(i**2)
+
+# USE TRY TO ATTEMPT
+try:
+    for i in ['a', 'b', 'c']:
+        print(i**2)
+
+# USE EXCEPT WHEN THERES AN ERROR
+except:
+    print('There was a problem!')
+    
+    
+x = 5
+y = 0
+# DIVISION BY ZERO ERROR
+z = x/y
+
+# ATTEMPT 
+try:
+    x = 5
+    y = 0
+    z = x/y
+    
+# WHEN ERROR OCCUR    
+except:
+    print("Error!")
+    
+# ALWAYS WILL RUN...ERROR OR NOT
+finally:
+    print("All Done!")
+    
+    
+    
+def ask():
+    
+    while True:
+        try:
+            n = int(input("Enter a integer: "))
+        except:
+            print("Please try again! \n")
+            continue
+        else:
+            break
+            
+    print("Your number squared is: ")
+    print(n**2)
