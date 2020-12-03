@@ -1,0 +1,396 @@
+# Lists are used to store multiple items in a single variable.
+# Lists are one of 4 built-in data types in Python used to store collections of data
+# List are created with square brackets []
+
+my_list = ["James", " Fred", "Ken", "Larry", "Benny"]
+print(my_list)
+
+# List items are indexed, the first item has index [0], and etc...
+# EXAMPLE OF INDEX [0] IN A LIST
+
+my_list = ["James", " Fred", "Ken", "Larry", "Benny"]
+#             0         1      2       3        4
+#            -5        -4     -3      -2       -1
+print(my_list[0])
+
+# Index [-1] will always be the last item
+print(my_list[-1])
+
+# # List items are ordered, changeable, and allow duplicate values.
+# If you add new items to a list, the new items will be placed at the end of the list, unless SPECIFIED.
+# # The list is changeable, meaning that we can change, add, and remove items in a list after it has been created.
+my_list1 = ["Honda", "Benz", "BMW", "Ford", "Kia"]
+print(my_list1)
+# APPEND method is used to add new items to a list...
+# APPEND method always add new items to the END of the list
+my_list1.append("Lexus")
+print(my_list1)
+
+# REMOVING AN ITEM FROM A LIST
+# REMOVE () method removes the specified item
+# when removing an item from a list it takes in the value
+my_list1.remove("BMW")
+print(my_list1)
+
+# ADD/INSERTING AN ITEM IN A LIST
+# when adding an item to a list it takes in the position and the element
+# INSERT allow you to add an item without replacing any of the existing values
+my_list1.insert(2, "BMW")
+print(my_list1)
+
+# To append elements from another list to the current list, use the extend() method.
+first_list = ["greens", "potatoes", "corn"]
+second_list = ["chicken", "salmon", "ribs"]
+first_list.extend(second_list)
+print(first_list)
+
+# The extend() method does not have to append lists
+# you can add any iterable object (tuples, sets, dictionaries etc.)
+this_list = ["yellow", "violet", "brown", "pink"]
+this_tuple = ("mango", "cherry", "brownie")
+this_list.extend(this_tuple)
+print(this_list)
+
+
+# CHANGING the value of an item in a list
+list5 = ["new", "old", "used"]
+print(list5)
+# specifying each item in a list by pos/index
+list5[1] = "sold"
+print(list5)
+
+# Change the second value by replacing it with two new values:
+list6 = ["apple", "banana", "cherry"]
+print(list6)
+list6[1] = ["coconut", "orange"]
+print(list6)
+
+# List also allow duplicate values
+my_list2 = ["Blue", "Red", "Green", "Blue", "Yellow"]
+print(my_list2)
+
+# You can find the length of a list using the len() method
+print(len(my_list2))
+print(len(my_list1))
+print(len(my_list))
+
+# List items can be of any data type:
+
+# String Type:
+list1 = ["apple", "orange", "banana"]
+
+# Integer Type:
+list2 = [1, 3, 5, 7, 9]
+
+# Boolean Type:
+list3 = [True, False, True]
+
+# A list can contain different data types:
+
+list4 = ["abc", 25, True, 40, "male"]
+
+# From Python's perspective, lists are defined as objects with the data type 'list':
+
+print(type(list1))  # returns the class data type <class 'list'>
+
+# list() constructor creates a new list.
+
+this_list = list(("jump", "leap", "crawl"))  # using the double round brackets
+print(this_list)
+
+# clear () method removes all the elements from the list
+clear_list = ["one", "two", "three", "four"]
+print(clear_list)
+clear_list.clear()
+print(clear_list)
+
+# copy () method return a copy of the list
+copy_list1 = ["copy", "this", "list", "and", "print", "again"]
+new_copy_list = copy_list1.copy()
+print(new_copy_list)
+
+# count () method returns the number of elements with the specified value
+count_list = ["one", "two", "one", "three", "four"]
+print(count_list.count("one"))  # returns 2 because the item "one" is a duplicate
+
+# pop () method removes an element at the specified position
+pop_list = ["remove", "delete", "pop", "cut", "kick", "boot"]
+pop_list.pop(1)  # pop () method will pop item from index [1]
+print(pop_list)
+pop_list.pop()  # unspecified pop () method will by default pop item from end of list
+print(pop_list)
+
+# The del keyword also removes the specified index:
+deleted_list = ["sarah", "jenny", "bob"]
+print(deleted_list)
+del deleted_list[1]
+print(deleted_list)
+
+# reverse () method will reverse the order of the list
+reverse_list = ["first", "second", "third", "fourth", "fifth"]
+print(reverse_list)
+reverse_list.reverse()
+print(reverse_list)
+
+# sort () method sorts the list...sort () method sorts in alphabetical and numerical order
+sort_list = [5, 16, 9, 3, 13, 2, 8]
+print(sort_list)
+sort_list.sort()
+print(sort_list)
+
+# You can specify a range of indexes by specifying where to start and where to end the range.
+# When specifying a range, the return value will be a new list with the specified items.
+# RANGE ":" has a START:STOP:END
+new_list = ["cherry", "banana", "orange", "pear", "kiwi"]
+print(new_list[:3])  # not specifying a start, by default python will start from beginning
+
+# FOR LOOP...through a list
+thislist1 = ["apple", "banana", "cherry"]
+for i in range(len(thislist1)):
+  print(thislist1[1])
+
+# WHILE LOOP...through a list
+thislist2 = ["apple", "banana", "cherry"]
+
+x = 0
+
+while x < len(thislist2):
+    print(thislist2[x])
+    x = x + 1
+
+# LIST COMPREHENSIONS
+# List Comprehensive offers the shortest syntax for looping through lists:
+thislist3 = ["apple", "banana", "kiwi"]
+[print(x) for x in thislist3]
+
+# Using FOR LOOP to add items to new_list
+cars = ["hyundai", "ford", "lexus"]
+new_list = []
+
+for x in cars:
+    if "u" in x:
+        new_list.append(x)
+
+print(new_list)
+
+
+# Using LIST COMPREHENSION to add items to new_list1
+friends = ["charlie", "ben", "sammy", "kendal"]
+
+# newlist = [expression for item in iterable if condition == True]
+new_list1 = [x for x in friends if "a" in x]
+
+print(new_list1)
+
+
+# TUPLES DATA TYPE:
+# A tuple is a collection which is ordered and unchangeable. In Python tuples are written with round brackets.
+this_tuple1 = ("a", "b", "c")
+print(this_tuple1)
+
+# TUPLES are unchangeable/immutable
+# However, you can work around that
+# Here's an example:
+x = ("ball", "hockey", "football", "tennis")
+
+# converting a TUPLE into a LIST
+y = list(x)
+y[1] = "basketball"
+# converting a LIST back into a TUPLE
+x = tuple(y)
+
+print(x)
+
+a_tuple = ("apple",)  # remember the comma after an item...
+print(type(a_tuple))
+
+# NOT A TUPLE
+# a_tuple1 = ("apple")
+# print(type(a_tuple1))
+
+# Using the tuple() method to make a tuple:
+# a_tuple2 = tuple(("cake", "chips", "pudding"))  # remember the double round-brackets.
+# print(a_tuple2)
+
+
+sneakers = ["nike", "jordan", "adidas", "reebok"]
+newest_list = [x for x in sneakers if "i" in x]
+
+print(newest_list)
+
+# SET are created with curly-brackets...Unordered and Unindexed {you can add items but not change an item}
+this_set = {"kenny", "ben", "sarah", "kim", "kenny"}
+this_set2 = {"royal", "ben", "roddy", "john"}
+print(this_set)
+
+# Union () method returns a new set with all items from both sets:
+ts_set = this_set.union(this_set2)
+print(ts_set)
+
+# Update method inserts the items in set2 into set1:
+set1 = {"a", "b", "c"}
+set2 = {1, 2, 3}
+
+set1.update(set2)
+print(set1)
+
+# A dictionary is a collection which is unordered, changeable and indexed.
+# In Python dictionaries are written with curly brackets, and they have keys and values.
+
+this_dict = {
+    "brand": "Honda",
+    "model": "Accord",
+    "year": 2011
+}
+print(this_dict)
+# key () method will return the key
+print(this_dict.keys())
+# value () method will return the value
+print(this_dict.values())
+# item () method will return the items in the dictionary as a list,tuple....
+print(this_dict.items())
+
+# you can access items in a dictionary by referring to its key name inside square-brackets.
+x = this_dict["brand"]
+print(x)
+
+# There is also a method called get() that will give you the same result:
+x = this_dict.get("model")
+print(x)
+
+# you can change the value of a specific item by referring to its key name:
+this_dict["year"] = 2020
+print(this_dict)
+
+# Adding an item to the dictionary is done by using a new index key and assigning a value to it:
+this_dict["color"] = "blue"
+print(this_dict)
+
+# NESTED DICTIONARY
+# A dictionary can also contain many dictionaries, this is called nested dictionaries.
+my_family = {
+    "child1": {
+        "name": "Amy",
+        "age": 14
+    },
+    "child2": {
+        "name": "John",
+        "age": 12
+    },
+    "child3": {
+        "name": "Sarah",
+        "age": 16
+    }
+}
+print(my_family)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# The MAP () function executes a specified function for each item in an iterable.
+# The item is sent to the function as a parameter
+def a_func(i):
+    return i
+
+
+# Map() function is an iterator, you can iterate over it's elements
+x = map(a_func, ("apple", "banana", "cherry"))
+
+# print(x) will return the object
+print(x)
+
+# Instead you have to convert the map into a list
+print(list(x))
+
+
+def my_func(a, b):
+    return a + b
+
+
+a = map(my_func, ("apple", "banana", "cherry"), (" pie", " split", " cheesecake"))
+print(list(a))
+
+
+# Calculate the length of each word in a tuple
+def how_many(n):
+    return len(n)
+
+
+new_func = map(how_many, ("sneakers", "boots", "shoes"))
+print(list(new_func))
+
+# STACKS AND QUEUES
+
+# STACKS
+letters = []
+
+# Let's push some letters into our list
+letters.append('c')
+letters.append('a')
+letters.append('t')
+letters.append('g')
+
+# Now let's pop letters, we should get 'g'
+last_item = letters.pop()
+print(last_item)
+
+# If we pop again we'll get 't'
+last_item = letters.pop()
+print(last_item)
+
+# 'c' and 'a' remain
+print(letters)  # ['c', 'a']
+
+# QUEUES
+fruits = []
+
+# Let's ENQUEUE some fruits into our list
+fruits.append('banana')
+fruits.append('grapes')
+fruits.append('mango')
+fruits.append('orange')
+
+# Now let's DEQUEUE our fruits, we should get 'banana'
+first_item = fruits.pop(0)
+print(first_item)
+
+# If we dequeue again we'll get 'grapes'
+first_item = fruits.pop(0)
+print(first_item)
+
+# 'mango' and 'orange' remain
+print(fruits) # ['c', 'a']
+
+def names(n):
+
+    return n
+
+
+x = map(names, ("Jeff", "Sarah", "Ken"))
+print(list(x))
