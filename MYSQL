@@ -33,3 +33,20 @@ INSERT INTO student VALUES(2, 'Ken', 'English');
 INSERT INTO student VALUES(3, 'Sarah', 'Computer Science');
 INSERT INTO student(student_id, people_name) VALUES(4, 'Jack');
 INSERT INTO student VALUES(5, 'Marvin', 'Sports Management');
+
+
+
+
+
+
+CREATE TABLE student (
+    student_id INT, 
+    name VARCHAR(20),
+    major VARCHAR(20) DEFAULT 'undecided', 
+    PRIMARY KEY(student_id)
+);
+
+
+SELECT * FROM student;
+
+INSERT INTO student(student_id, name) VALUES(1, 'James');
