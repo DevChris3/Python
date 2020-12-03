@@ -75,3 +75,8 @@ UPDATE student
 SET major = 'Chem'
 WHERE major = 'Chemistry';
 
+UPDATING USING LOGIC
+
+UPDATE student
+SET major = 'BioChemistry'
+WHERE major = 'Bio' OR major = 'Chem';
