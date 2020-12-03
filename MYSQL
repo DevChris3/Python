@@ -80,3 +80,13 @@ UPDATING USING LOGIC
 UPDATE student
 SET major = 'BioChemistry'
 WHERE major = 'Bio' OR major = 'Chem';
+
+
+DELETING Data
+
+DELETE FROM student
+WHERE student_id = 5;
+
+
+DELETE FROM student
+WHERE name = 'Jack' AND major = 'BioChemistry';
