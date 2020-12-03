@@ -1,0 +1,15 @@
+CREATE TABLE student (
+    student_id INT, 
+    people_name VARCHAR(20),
+    major VARCHAR(20), 
+    PRIMARY KEY(student_id)
+);
+
+DESCRIBE student;  #DESCRIBE allows you to see what you created...kinda like checking to see what you've done
+
+DROP TABLE student;  #DROP allows you to delete (del) a table, column, row
+
+ALTER TABLE student ADD gpa DECIMAL(3,2);  #ALTER allows you to modify
+
+ALTER TABLE student DROP COLUMN gpa;  #ALTER #DROP allows you to modify and delete
+
