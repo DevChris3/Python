@@ -13,3 +13,23 @@ ALTER TABLE student ADD gpa DECIMAL(3,2);  #ALTER allows you to modify
 
 ALTER TABLE student DROP COLUMN gpa;  #ALTER #DROP allows you to modify and delete
 
+
+
+
+
+
+CREATE TABLE student (
+    student_id INT, 
+    people_name VARCHAR(20),
+    major VARCHAR(20), 
+    PRIMARY KEY(student_id)
+);
+
+
+SELECT * FROM student;
+
+INSERT INTO student VALUES(1, 'James', "Biology");
+INSERT INTO student VALUES(2, 'Ken', 'English');
+INSERT INTO student VALUES(3, 'Sarah', 'Computer Science');
+INSERT INTO student(student_id, people_name) VALUES(4, 'Jack');
+INSERT INTO student VALUES(5, 'Marvin', 'Sports Management');
