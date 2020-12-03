@@ -90,3 +90,7 @@ WHERE student_id = 5;
 
 DELETE FROM student
 WHERE name = 'Jack' AND major = 'BioChemistry';
+
+#THIS WILL DELETE ENTIRE ROWS
+DELETE FROM student
+
