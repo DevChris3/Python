@@ -107,6 +107,22 @@ INSERT INTO branch_supplier VALUES(3, 'Uni-ball', 'Writing Utensils');
 INSERT INTO branch_supplier VALUES(3, 'Hammer Mill', 'Paper');
 INSERT INTO branch_supplier VALUES(3, 'Stamford Lables', 'Custom Forms');
 
+UPDATE branch_supplier
+SET supply_type = 'Electronics'
+WHERE supply_type = 'Paper';
+
+UPDATE branch_supplier
+SET supply_type = 'Custom Clothing'
+WHERE supply_type = 'Custom Forms';
+
+UPDATE branch_supplier
+SET supply_type = 'Outdoor play'
+WHERE supply_type = 'Writing Utensils';
+
+
+select * 
+from branch_supplier;
+
 -- CLIENT
 INSERT INTO client VALUES(400, 'Dunmore Highschool', 2);
 INSERT INTO client VALUES(401, 'Lackawana Country', 2);
@@ -115,6 +131,25 @@ INSERT INTO client VALUES(403, 'John Daly Law, LLC', 3);
 INSERT INTO client VALUES(404, 'Scranton Whitepages', 2);
 INSERT INTO client VALUES(405, 'Times Newspaper', 3);
 INSERT INTO client VALUES(406, 'FedEx', 2);
+
+SELECT *
+FROM client;
+
+
+-- updating client table 
+UPDATE client
+SET client_name = 'Amazon'
+WHERE client_name = 'Dunmore Highschool';
+
+UPDATE client
+SET client_name = 'Scranton Suppliers'
+WHERE client_name = 'Scranton Whitepages';
+
+UPDATE client
+SET client_name = 'LackwannaPark'
+WHERE client_name = 'Lackawana Country';
+
+
 
 -- WORKS_WITH
 INSERT INTO works_with VALUES(105, 400, 55000);
@@ -128,7 +163,40 @@ INSERT INTO works_with VALUES(102, 406, 15000);
 INSERT INTO works_with VALUES(105, 406, 130000);
 
 
--- basic queries
+
+
+-- UPDATING THE TABLE (making some changes)
+
+-- emp_id column rename in the employee table
+-- you want to alter/change the table 
+-- then specify what column name using RENAME COLUMN 
+ALTER TABLE employee 
+RENAME COLUMN emp_id
+TO badge_num;
+
+-- renaming the name column
+ALTER TABLE employee
+RENAME COLUMN first_name
+TO first;
+
+-- renaming the lastname column
+ALTER TABLE employee
+RENAME COLUMN last_name
+TO last;
+
+-- renaming the branchid column
+ALTER TABLE employee
+RENAME COLUMN branch_id
+TO comp_branch;
+
+-- renaming the superid column
+ALTER TABLE employee
+RENAME COLUMN super_id
+TO supervisor_num;
+
+
+-- Some practice queries to check the database
+-- using SELECT FROM, ORDER BY, WHERE
 
 -- Find all employees
 SELECT *
@@ -136,59 +204,42 @@ FROM employee;
 
 -- Find all clients
 SELECT *
-FROM clients;
+FROM client;
 
 -- Find all employees ordered by salary
+-- returns all employees salary from least to greatest
 SELECT *
-from employee
-ORDER BY salary ASC/DESC;
+FROM employee
+ORDER BY salary ASC;
 
--- Find all employees ordered by sex then name
+-- returns all employees salary from greatest to least
 SELECT *
-from employee
-ORDER BY sex, name;
+FROM employee
+ORDER BY salary DESC;
+
+-- Find all employees ordered by sex then birth_date
+SELECT *
+FROM employee
+ORDER BY sex, birth_date;
 
 -- Find the first 5 employees in the table
 SELECT *
-from employee
+FROM employee
 LIMIT 5;
 
--- Find the first and last names of all employees
-SELECT first_name, employee.last_name
+-- Find the forename and surnames of all employees
+SELECT first AS forename, employee.last AS surname
 FROM employee;
 
--- Find the forename and surnames names of all employees
-SELECT first_name AS forename, employee.last_name AS surname
-FROM employee;
-
--- Find out all the different genders
-SELECT DISCINCT sex
-FROM employee;
-
--- Find all male employees
+-- Find all employees at branch 3
 SELECT *
 FROM employee
-WHERE sex = 'M';
-
--- Find all employees at branch 2
-SELECT *
-FROM employee
-WHERE branch_id = 2;
-
--- Find all employee's id's and names who were born after 1969
-SELECT emp_id, first_name, last_name
-FROM employee
-WHERE birth_date >= 1970-01-01;
+WHERE branch_id = 3;
 
 -- Find all female employees at branch 2
 SELECT *
 FROM employee
-WHERE branch_id = 2 AND sex = 'F';
-
--- Find all employees who are female & born after 1969 or who make over 80000
-SELECT *
-FROM employee
-WHERE (birth_date >= '1970-01-01' AND sex = 'F') OR salary > 80000;
+WHERE comp_branch = 2 AND sex = 'F';
 
 -- Find all employees born between 1970 and 1975
 SELECT *
@@ -199,5 +250,3 @@ WHERE birth_date BETWEEN '1970-01-01' AND '1975-01-01';
 SELECT *
 FROM employee
 WHERE first_name IN ('Jim', 'Michael', 'Stanley', 'David');
-
-
