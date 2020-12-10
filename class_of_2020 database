@@ -1,0 +1,81 @@
+DROP TABLE class_of_2020;
+
+-- creating a table of the college graduates of 2020
+-- collect data of the 2020 class
+
+CREATE TABLE class_of_2020 (
+    student_id INT PRIMARY KEY,
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
+    sex VARCHAR(1),
+    GPA DECIMAL(3,2),
+    major VARCHAR(20),
+    degree VARCHAR(10)
+);
+
+-- inserting data in the table class_of_2020
+
+INSERT INTO class_of_2020 VALUES(1, 'Jacob', 'Grizzley', 'M', 3.45, 'Biology', 'Bachelor');
+INSERT INTO class_of_2020 VALUES(2, 'Kendall', 'Wright', 'M', 3.28, 'Chemistry', 'Bachelor');
+INSERT INTO class_of_2020 VALUES(3, 'Billy', 'Jones', 'M', 3.00, 'Computer Science', 'Associate');
+INSERT INTO class_of_2020 VALUES(4, 'Jerimah', 'London', 'M', 3.75, 'Biology', 'Master');
+INSERT INTO class_of_2020 VALUES(5, 'Jack', 'Myers', 'M', 3.87, 'Math', 'Bachelor');
+INSERT INTO class_of_2020 VALUES(6, 'Chris', 'Santiago', 'M', 3.55, 'Computer Science', 'Associate');
+INSERT INTO class_of_2020 VALUES(7, 'Brenda', 'Lorett', 'F', 4.00, 'Arts', 'Bachelor');
+INSERT INTO class_of_2020 VALUES(8, 'Sarah', 'Commingham', 'F', 3.45, 'Biology', 'Bachelor');
+INSERT INTO class_of_2020 VALUES(9, 'Nicole', 'Clark', 'F', 3.45, 'Biology', 'Bachelor');
+INSERT INTO class_of_2020 VALUES(10, 'Jacob', 'Anderson', 'M', 3.45, 'Biology', 'Bachelor');
+
+-- updating class_of_2020 table
+-- updating the degree column
+
+UPDATE class_of_2020
+SET degree = 'Associate'
+WHERE student_id = 10;
+
+UPDATE class_of_2020
+SET degree = 'Master'
+WHERE student_id = 8;
+
+-- updating the gpa column
+
+UPDATE class_of_2020
+SET gpa = 4.00
+WHERE student_id = 8;
+
+-- updating the major column
+
+UPDATE class_of_2020
+SET major = 'Sports Management'
+WHERE student_id = 10;
+
+UPDATE class_of_2020
+SET major = 'Chemistry'
+WHERE student_id = 8;
+
+-- Find all of class_of_2020
+SELECT *
+FROM class_of_2020;
+
+-- Find all students as forename and surname
+SELECT first_name AS forename, last_name AS surname
+FROM class_of_2020;
+
+-- Find all students by sex and first_name
+SELECT *
+FROM class_of_2020
+ORDER BY sex, first_name;
+
+-- Finding all class_of_2020 using ASC/DESC 
+SELECT *
+FROM class_of_2020
+ORDER BY student_id ASC;
+
+SELECT *
+FROM class_of_2020
+ORDER BY student_id DESC;
+
+-- sorting class_of_2020 by gpa
+SELECT * 
+FROM class_of_2020
+ORDER BY gpa ASC;
