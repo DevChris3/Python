@@ -1,3 +1,4 @@
--- college database ((PK) = student_id, # of students, cost, (FK) academics, degree type )
+-- college database ((PK) = student_id, (FK) academics, degree type )
 -- campus (staff, professor, link to (DATABASE) = academics) AS PK 
 -- college students ((PK) = student id (FK OF database), first, last, gpa, link student major to academics) degree type
+
