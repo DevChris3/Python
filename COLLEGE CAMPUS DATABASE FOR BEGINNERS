@@ -2,3 +2,62 @@
 -- campus (staff(counselor), professor(what he/her teach), link to (DATABASE) = academics) AS PK 
 -- college students ((PK) = student id (FK OF database), first, last, gpa, link professor to professor,) degree type
 
+-- first we'll create the campus database
+DROP TABLE college_campus;
+
+SELECT *
+FROM college_campus;
+
+CREATE TABLE college_campus (
+    student_id INT PRIMARY KEY,
+    tuition INT,
+    academics VARCHAR(40),
+    degree VARCHAR(10),
+    counselor_id INT,
+    FOREIGN KEY (counselor_id) REFERENCES counselor(counselor_id)
+);
+
+-- here we'll create the campus staff (counselor, tuition etc,.)
+DROP TABLE counselor;
+
+SELECT *
+FROM counselor;
+
+CREATE TABLE counselor (
+    counselor_id INT PRIMARY KEY,
+    first_name VARCHAR(30),
+    last_name VARCHAR(30),
+    sex VARCHAR(1),
+    student_id INT,
+    academics VARCHAR(40)
+);
+
+-- then we create the campus students table
+-- related to the counselor table and the database table
+DROP TABLE campus_students;
+
+SELECT *
+FROM campus_students;
+
+CREATE TABLE campus_students (
+    student_id INT PRIMARY KEY,
+    first_name VARCHAR(30),
+    last_name VARCHAR(30),
+    sex VARCHAR(1),
+    counselor_id INT,
+    GPA DECIMAL(3,2),
+    major VARCHAR(20),
+    degree VARCHAR(10)
+);
+
+-- after creating the campus student table
+-- you need to update an attribute in the campus table as a FK to the counselor table
+
+ALTER TABLE campus_students
+ADD FOREIGN KEY (counselor_id) REFERENCES counselor(counselor_id);
+
+-- you'll also need to update an attribute in the campus table as a FK to the database table
+
+ALTER TABLE campus_students
+ADD FOREIGN KEY (counselor_id) REFERENCES college_campus(counselor_id);
+
